@@ -3,20 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Дом Текстиля | Премиум Каталог</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Дом Текстиля | Главная</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header class="mobile-header">
         <button class="menu-toggle" id="menuToggle">
-            <span></span>
-            <span></span>
-            <span></span>
+            <i class="ph ph-list"></i>
         </button>
         <div class="mobile-logo">Дом <span>Текстиля</span></div>
-        <button class="mobile-cart-btn">🛒</button>
+        <button class="icon-btn">
+            <i class="ph ph-user"></i>
+        </button>
     </header>
 
     <div class="mobile-overlay" id="mobileOverlay"></div>
@@ -29,19 +30,19 @@
         
         <nav class="sidebar-nav">
             <a href="#" class="nav-link">
-                <span class="icon">⬛</span>
+                <i class="ph ph-squares-four icon"></i>
                 <span class="link-text">Каталог</span>
             </a>
             <a href="#" class="nav-link">
-                <span class="icon">✨</span>
+                <i class="ph ph-sparkle icon"></i>
                 <span class="link-text">Коллекции</span>
             </a>
             <a href="#" class="nav-link">
-                <span class="icon">💎</span>
+                <i class="ph ph-crown icon"></i>
                 <span class="link-text">Премиум</span>
             </a>
             <a href="#" class="nav-link">
-                <span class="icon">📞</span>
+                <i class="ph ph-phone icon"></i>
                 <span class="link-text">Контакты</span>
             </a>
         </nav>
@@ -49,94 +50,145 @@
 
     <main class="main-content">
         <header class="top-header">
-            <div class="breadcrumbs">Главная / Каталог / Косметика</div>
             <div class="search-bar">
-                <input type="text" placeholder="Поиск по товарам">
-                <span class="search-icon">🔍</span>
+                <i class="ph ph-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Поиск по товарам...">
             </div>
             <div class="user-actions">
-                <button class="btn-user">👤</button>
-                <button class="btn-solid">Корзина (0)</button>
+                <button class="icon-btn cart-desk-btn">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-badge-desk">0</span>
+                </button>
+                <button class="icon-btn profile-desk-btn">
+                    <i class="ph ph-user"></i>
+                </button>
             </div>
         </header>
 
         <section class="hero-section">
-            <h2>Элита вашего комфорта</h2>
-            <p>Эксклюзивные решения для отелей и дома.</p>
+            <div class="hero-content">
+                <h2>Искусство вашего отдыха</h2>
+                <p>Эксклюзивный текстиль для премиальных отелей и ценителей домашнего уюта.</p>
+                <button class="btn-solid">Смотреть каталог <i class="ph ph-arrow-right"></i></button>
+            </div>
         </section>
 
-        <div class="mobile-breadcrumbs">Главная / Каталог / Косметика</div>
-        
-        <div class="category-tabs">
-            <button class="tab-btn active">Все коллекции</button>
-            <button class="tab-btn">Постельное белье</button>
-            <button class="tab-btn">Махровые изделия</button>
-            <button class="tab-btn">Премиум линейка</button>
-        </div>
+        <section class="visual-categories">
+            <h3 class="section-title">Категории</h3>
+            <div class="categories-grid">
+                <a href="#" class="cat-card">
+                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-info">
+                        <h4>Постельное белье</h4>
+                        <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="cat-card">
+                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-info">
+                        <h4>Махровые изделия</h4>
+                        <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="cat-card">
+                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-info">
+                        <h4>Одеяла и подушки</h4>
+                        <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+                <a href="#" class="cat-card">
+                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-info">
+                        <h4>Декор и уют</h4>
+                        <i class="ph ph-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+        </section>
 
-        <div class="product-grid">
-            
-            <div class="product-card">
-                <div class="product-image-container">
-                    <div class="product-image-placeholder">Фото</div>
-                    <button class="wishlist-icon">❤️</button>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Сатин-Жаккард</span>
-                    <h3 class="product-title">Комплект "Империал"</h3>
-                    <div class="product-bottom">
-                        <span class="product-price">0 ₽</span>
-                        <button class="add-to-cart-icon">+</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image-container">
-                    <div class="product-image-placeholder">Фото</div>
-                    <button class="wishlist-icon">❤️</button>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Египетский хлопок</span>
-                    <h3 class="product-title">Набор полотенец "Оникс"</h3>
-                    <div class="product-bottom">
-                        <span class="product-price">0 ₽</span>
-                        <button class="add-to-cart-icon">+</button>
-                    </div>
-                </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image-container">
-                    <div class="product-image-placeholder">Фото</div>
-                    <button class="wishlist-icon">❤️</button>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Шелк</span>
-                    <h3 class="product-title">Наволочка "Рубин"</h3>
-                    <div class="product-bottom">
-                        <span class="product-price">0 ₽</span>
-                        <button class="add-to-cart-icon">+</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="product-card">
-                <div class="product-image-container">
-                    <div class="product-image-placeholder">Фото</div>
-                    <button class="wishlist-icon">❤️</button>
-                </div>
-                <div class="product-info">
-                    <span class="product-category">Велюр</span>
-                    <h3 class="product-title">Халат банный VIP</h3>
-                    <div class="product-bottom">
-                        <span class="product-price">0 ₽</span>
-                        <button class="add-to-cart-icon">+</button>
-                    </div>
-                </div>
+        <section class="popular-products">
+            <div class="section-header">
+                <h3 class="section-title">Хиты продаж</h3>
+                <a href="#" class="view-all">Все товары <i class="ph ph-caret-right"></i></a>
             </div>
 
-        </div>
+            <div class="product-grid">
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <div class="product-image-placeholder">Фото товара</div>
+                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Сатин-Жаккард</span>
+                        <h3 class="product-title">Комплект "Империал"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">12 500 ₽</span>
+                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <div class="product-image-placeholder">Фото товара</div>
+                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Египетский хлопок</span>
+                        <h3 class="product-title">Набор полотенец "Оникс"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">4 200 ₽</span>
+                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <div class="product-image-placeholder">Фото товара</div>
+                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Шелк</span>
+                        <h3 class="product-title">Наволочка "Рубин"</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">2 900 ₽</span>
+                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-image-container">
+                        <div class="product-image-placeholder">Фото товара</div>
+                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
+                        <div class="product-overlay">
+                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Велюр</span>
+                        <h3 class="product-title">Халат банный VIP</h3>
+                        <div class="product-bottom">
+                            <span class="product-price">8 100 ₽</span>
+                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
 
         <footer class="main-footer">
             <div class="footer-content">
@@ -155,8 +207,8 @@
                     <p>+7 (999) 000-00-00</p>
                     <p>info@domtekstilya.ru</p>
                     <div class="socials">
-                        <a href="#">TG</a>
-                        <a href="#">VK</a>
+                        <a href="#"><i class="ph ph-telegram-logo"></i></a>
+                        <a href="#"><i class="ph ph-vk-logo"></i></a>
                     </div>
                 </div>
             </div>
@@ -169,64 +221,57 @@
 
     <nav class="mobile-tab-bar">
         <button class="tab-bar-item" id="mobileMenuBtn">
-            <span class="tab-icon">☰</span>
+            <i class="ph ph-list tab-icon"></i>
             <span class="tab-text">Меню</span>
         </button>
         <button class="tab-bar-item">
-            <span class="tab-icon">🔍</span>
-            <span class="tab-text">Фильтры</span>
+            <i class="ph ph-magnifying-glass tab-icon"></i>
+            <span class="tab-text">Поиск</span>
         </button>
         <button class="tab-bar-item">
-            <span class="tab-icon">❤️</span>
+            <i class="ph ph-heart tab-icon"></i>
             <span class="tab-text">Избранное</span>
         </button>
         <button class="tab-bar-item">
-            <span class="tab-icon">🛒</span>
+            <i class="ph ph-shopping-cart tab-icon"></i>
             <span class="tab-text">Корзина</span>
             <span class="cart-badge">0</span>
         </button>
     </nav>
 
     <script>
-        // Анимация вкладок
-        const tabs = document.querySelectorAll('.tab-btn');
-        const products = document.querySelectorAll('.product-card');
-
-        tabs.forEach(tab => {
-            tab.addEventListener('click', () => {
-                tabs.forEach(t => t.classList.remove('active'));
-                tab.classList.add('active');
-
-                products.forEach((product, index) => {
-                    product.style.transition = 'all 0.4s ease';
-                    product.style.opacity = '0';
-                    product.style.transform = 'translateY(15px)';
-                    
-                    setTimeout(() => {
-                        product.style.opacity = '1';
-                        product.style.transform = 'translateY(0)';
-                    }, 300 + (index * 50));
-                });
-            });
-        });
-
-        // Логика мобильного меню (бургер)
+        // Мобильное меню
         const menuToggle = document.getElementById('menuToggle');
         const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('mobileOverlay');
 
         function toggleMenu() {
-            menuToggle.classList.toggle('active');
             sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
             document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
         }
 
-        // Привязываем и к кнопке в шапке, и к кнопке в таб-баре
         menuToggle.addEventListener('click', toggleMenu);
         mobileMenuBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
+
+        // Анимация лайков
+        const wishBtns = document.querySelectorAll('.wishlist-icon');
+        wishBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('ph-heart')) {
+                    icon.classList.remove('ph-heart');
+                    icon.classList.add('ph-heart-fill');
+                    this.style.color = 'var(--clr-accent-red)';
+                } else {
+                    icon.classList.add('ph-heart');
+                    icon.classList.remove('ph-heart-fill');
+                    this.style.color = 'var(--clr-text-white)';
+                }
+            });
+        });
     </script>
 </body>
 </html>
