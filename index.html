@@ -2,14 +2,26 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Дом Текстиля | Премиум Каталог</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <aside class="sidebar">
+    <div class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <div class="mobile-logo">Дом <span>Текстиля</span></div>
+        <button class="mobile-cart">🛒</button>
+    </div>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
         <div class="logo-container">
             <div class="logo-placeholder">ДТ</div>
             <h1 class="logo-text">Дом<br><span>Текстиля</span></h1>
@@ -46,7 +58,7 @@
 
         <section class="hero-section">
             <h2>Элита вашего комфорта</h2>
-            <p>Эксклюзивные решения для тех, кто ценит качество.</p>
+            <p>Эксклюзивные решения для отелей и тех, кто ценит качество дома.</p>
         </section>
         
         <div class="category-tabs">
@@ -128,7 +140,73 @@
             </div>
 
         </div>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Дом <br><span>Текстиля</span></h3>
+                    <p>Эксклюзивные решения для отелей и дома.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Клиентам</h4>
+                    <a href="#">Доставка и оплата</a>
+                    <a href="#">Возврат</a>
+                    <a href="#">Оптовикам</a>
+                </div>
+                <div class="footer-contacts">
+                    <h4>Контакты</h4>
+                    <p>+7 (999) 000-00-00</p>
+                    <p>info@domtekstilya.ru</p>
+                    <div class="socials">
+                        <a href="#">TG</a>
+                        <a href="#">VK</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Дом Текстиля. Все права защищены.</p>
+            </div>
+        </footer>
+
     </main>
 
+    <script>
+        // Анимация вкладок
+        const tabs = document.querySelectorAll('.tab-btn');
+        const products = document.querySelectorAll('.product-card');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+
+                products.forEach((product, index) => {
+                    product.style.transition = 'all 0.4s ease';
+                    product.style.opacity = '0';
+                    product.style.transform = 'translateY(15px)';
+                    
+                    setTimeout(() => {
+                        product.style.opacity = '1';
+                        product.style.transform = 'translateY(0)';
+                    }, 300 + (index * 50));
+                });
+            });
+        });
+
+        // Логика мобильного меню (бургер)
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            menuToggle.classList.toggle('active');
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        menuToggle.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+    </script>
 </body>
 </html>
