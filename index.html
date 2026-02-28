@@ -9,15 +9,15 @@
 </head>
 <body>
 
-    <div class="mobile-header">
+    <header class="mobile-header">
         <button class="menu-toggle" id="menuToggle">
             <span></span>
             <span></span>
             <span></span>
         </button>
         <div class="mobile-logo">Дом <span>Текстиля</span></div>
-        <button class="mobile-cart">🛒</button>
-    </div>
+        <button class="mobile-cart-btn">🛒</button>
+    </header>
 
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
@@ -49,34 +49,37 @@
 
     <main class="main-content">
         <header class="top-header">
-            <div class="breadcrumbs">Главная / Каталог</div>
+            <div class="breadcrumbs">Главная / Каталог / Косметика</div>
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск по товарам">
+                <span class="search-icon">🔍</span>
+            </div>
             <div class="user-actions">
-                <button class="btn-outline">Вход</button>
+                <button class="btn-user">👤</button>
                 <button class="btn-solid">Корзина (0)</button>
             </div>
         </header>
 
         <section class="hero-section">
             <h2>Элита вашего комфорта</h2>
-            <p>Эксклюзивные решения для отелей и тех, кто ценит качество дома.</p>
+            <p>Эксклюзивные решения для отелей и дома.</p>
         </section>
+
+        <div class="mobile-breadcrumbs">Главная / Каталог / Косметика</div>
         
         <div class="category-tabs">
             <button class="tab-btn active">Все коллекции</button>
             <button class="tab-btn">Постельное белье</button>
             <button class="tab-btn">Махровые изделия</button>
             <button class="tab-btn">Премиум линейка</button>
-            <button class="tab-btn">Декор</button>
         </div>
 
         <div class="product-grid">
             
             <div class="product-card">
-                <div class="product-image-placeholder">
-                    <span>Место для фото</span>
-                    <div class="product-overlay">
-                        <button class="quick-view-btn">Быстрый просмотр</button>
-                    </div>
+                <div class="product-image-container">
+                    <div class="product-image-placeholder">Фото</div>
+                    <button class="wishlist-icon">❤️</button>
                 </div>
                 <div class="product-info">
                     <span class="product-category">Сатин-Жаккард</span>
@@ -89,11 +92,9 @@
             </div>
             
             <div class="product-card">
-                <div class="product-image-placeholder">
-                    <span>Место для фото</span>
-                    <div class="product-overlay">
-                        <button class="quick-view-btn">Быстрый просмотр</button>
-                    </div>
+                <div class="product-image-container">
+                    <div class="product-image-placeholder">Фото</div>
+                    <button class="wishlist-icon">❤️</button>
                 </div>
                 <div class="product-info">
                     <span class="product-category">Египетский хлопок</span>
@@ -106,11 +107,9 @@
             </div>
 
             <div class="product-card">
-                <div class="product-image-placeholder">
-                    <span>Место для фото</span>
-                    <div class="product-overlay">
-                        <button class="quick-view-btn">Быстрый просмотр</button>
-                    </div>
+                <div class="product-image-container">
+                    <div class="product-image-placeholder">Фото</div>
+                    <button class="wishlist-icon">❤️</button>
                 </div>
                 <div class="product-info">
                     <span class="product-category">Шелк</span>
@@ -123,11 +122,9 @@
             </div>
             
             <div class="product-card">
-                <div class="product-image-placeholder">
-                    <span>Место для фото</span>
-                    <div class="product-overlay">
-                        <button class="quick-view-btn">Быстрый просмотр</button>
-                    </div>
+                <div class="product-image-container">
+                    <div class="product-image-placeholder">Фото</div>
+                    <button class="wishlist-icon">❤️</button>
                 </div>
                 <div class="product-info">
                     <span class="product-category">Велюр</span>
@@ -149,7 +146,7 @@
                 </div>
                 <div class="footer-links">
                     <h4>Клиентам</h4>
-                    <a href="#">Доставка и оплата</a>
+                    <a href="#">Доставка</a>
                     <a href="#">Возврат</a>
                     <a href="#">Оптовикам</a>
                 </div>
@@ -169,6 +166,26 @@
         </footer>
 
     </main>
+
+    <nav class="mobile-tab-bar">
+        <button class="tab-bar-item" id="mobileMenuBtn">
+            <span class="tab-icon">☰</span>
+            <span class="tab-text">Меню</span>
+        </button>
+        <button class="tab-bar-item">
+            <span class="tab-icon">🔍</span>
+            <span class="tab-text">Фильтры</span>
+        </button>
+        <button class="tab-bar-item">
+            <span class="tab-icon">❤️</span>
+            <span class="tab-text">Избранное</span>
+        </button>
+        <button class="tab-bar-item">
+            <span class="tab-icon">🛒</span>
+            <span class="tab-text">Корзина</span>
+            <span class="cart-badge">0</span>
+        </button>
+    </nav>
 
     <script>
         // Анимация вкладок
@@ -195,6 +212,7 @@
 
         // Логика мобильного меню (бургер)
         const menuToggle = document.getElementById('menuToggle');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
         const sidebar = document.getElementById('sidebar');
         const overlay = document.getElementById('mobileOverlay');
 
@@ -205,7 +223,9 @@
             document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
         }
 
+        // Привязываем и к кнопке в шапке, и к кнопке в таб-баре
         menuToggle.addEventListener('click', toggleMenu);
+        mobileMenuBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
     </script>
 </body>
