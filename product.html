@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Комплект "Империал" | Дом Текстиля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <i class="ph ph-list"></i>
+        </button>
+        <a href="index.html" class="mobile-logo-link">
+            <img src="images/logo.PNG" alt="Лого" class="mobile-logo-img" onerror="this.style.display='none'">
+            <div class="mobile-logo-text neon-text">Дом Текстиля</div>
+        </a>
+        <button class="icon-btn profile-btn-trigger">
+            <i class="ph ph-user"></i>
+        </button>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                <img src="images/logo.PNG" alt="Лого" class="sidebar-logo-img" onerror="this.style.display='none'">
+                <h1 class="logo-text neon-text">Дом Текстиля</h1>
+            </a>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-link active">
+                <i class="ph ph-squares-four icon"></i>
+                <span class="link-text">Каталог</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="ph ph-sparkle icon"></i>
+                <span class="link-text">Коллекции</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="ph ph-crown icon"></i>
+                <span class="link-text">Премиум</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content product-page-main">
+        <header class="top-header">
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Поиск по товарам...">
+            </div>
+            <div class="user-actions">
+                <button class="icon-btn cart-desk-btn">
+                    <i class="ph ph-shopping-cart"></i>
+                    <span class="cart-badge-desk">0</span>
+                </button>
+                <button class="icon-btn profile-desk-btn profile-btn-trigger">
+                    <i class="ph ph-user"></i>
+                </button>
+            </div>
+        </header>
+
+        <div class="breadcrumbs-detailed">
+            <a href="index.html">Главная</a> / <a href="#">Каталог</a> / <a href="#">Постельное белье</a> / <span>Комплект "Империал"</span>
+        </div>
+
+        <section class="single-product-container">
+            <div class="product-gallery">
+                <div class="main-image">
+                    <div class="image-placeholder">Основное фото товара</div>
+                    <button class="wishlist-btn-large"><i class="ph ph-heart"></i></button>
+                </div>
+                <div class="thumbnail-row">
+                    <div class="thumb active"><div class="thumb-placeholder">Фото 1</div></div>
+                    <div class="thumb"><div class="thumb-placeholder">Фото 2</div></div>
+                    <div class="thumb"><div class="thumb-placeholder">Фото 3</div></div>
+                    <div class="thumb"><div class="thumb-placeholder">Фото 4</div></div>
+                </div>
+            </div>
+
+            <div class="product-details-info">
+                <span class="prod-category-tag">Сатин-Жаккард</span>
+                <h1 class="prod-title">Комплект "Империал"</h1>
+                <p class="prod-sku">Артикул: DT-8804-IMP</p>
+                
+                <div class="prod-price-block">
+                    <span class="current-price">12 500 ₽</span>
+                </div>
+
+                <p class="prod-short-desc">
+                    Эксклюзивный комплект постельного белья из премиального египетского хлопка. Идеально гладкая фактура, благородный блеск и непревзойденная долговечность.
+                </p>
+
+                <div class="prod-options">
+                    <h4>Выберите размер:</h4>
+                    <div class="options-grid">
+                        <label class="option-box">
+                            <input type="radio" name="size" value="1.5" checked>
+                            <span class="option-label">1.5-спальный</span>
+                        </label>
+                        <label class="option-box">
+                            <input type="radio" name="size" value="2">
+                            <span class="option-label">2-спальный</span>
+                        </label>
+                        <label class="option-box">
+                            <input type="radio" name="size" value="euro">
+                            <span class="option-label">Евро</span>
+                        </label>
+                        <label class="option-box">
+                            <input type="radio" name="size" value="family">
+                            <span class="option-label">Семейный</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="prod-actions">
+                    <div class="quantity-selector">
+                        <button class="qty-btn minus">-</button>
+                        <input type="number" value="1" min="1" class="qty-input">
+                        <button class="qty-btn plus">+</button>
+                    </div>
+                    <button class="btn-solid add-to-cart-large">
+                        <i class="ph ph-shopping-cart"></i> В корзину
+                    </button>
+                </div>
+
+                <div class="prod-benefits">
+                    <div class="benefit-item">
+                        <i class="ph ph-truck"></i>
+                        <span>Доставка по всей РФ</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="ph ph-shield-check"></i>
+                        <span>Гарантия качества</span>
+                    </div>
+                    <div class="benefit-item">
+                        <i class="ph ph-package"></i>
+                        <span>Премиальная упаковка</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="product-tabs-section">
+            <div class="detailed-tabs">
+                <button class="det-tab active" data-target="desc">Описание</button>
+                <button class="det-tab" data-target="chars">Характеристики</button>
+                <button class="det-tab" data-target="care">Уход</button>
+            </div>
+            
+            <div class="tab-content active" id="tab-desc">
+                <h3>О коллекции "Империал"</h3>
+                <p>Этот комплект создан для тех, кто не привык идти на компромиссы в вопросах комфорта. Сатин-жаккард высокой плотности обеспечивает потрясающую мягкость и создает микроклимат, идеально подходящий для глубокого сна. Ткань гипоаллергенна и сохраняет свой первозданный вид даже после сотни стирок.</p>
+            </div>
+            <div class="tab-content" id="tab-chars">
+                <ul class="chars-list">
+                    <li><span>Материал:</span> 100% Египетский хлопок (Сатин-Жаккард)</li>
+                    <li><span>Плотность:</span> 300 ТС</li>
+                    <li><span>Комплектация (Евро):</span> Пододеяльник (200х220), Простыня (240х260), Наволочки (50х70 - 2шт, 70х70 - 2шт)</li>
+                    <li><span>Застежка:</span> Потайная молния</li>
+                </ul>
+            </div>
+            <div class="tab-content" id="tab-care">
+                <ul class="chars-list">
+                    <li>Стирка при температуре не выше 40°C</li>
+                    <li>Не использовать отбеливатели</li>
+                    <li>Гладить при средней температуре (до 150°C)</li>
+                    <li>Барабанная сушка на деликатном режиме</li>
+                </ul>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="neon-text-footer">Дом Текстиля</h3>
+                    <p>Эксклюзивные решения для отелей и дома.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <nav class="mobile-tab-bar">
+        <button class="tab-bar-item" id="mobileMenuBtn">
+            <i class="ph ph-list tab-icon"></i>
+            <span class="tab-text">Меню</span>
+        </button>
+        <button class="tab-bar-item">
+            <i class="ph ph-heart tab-icon"></i>
+            <span class="tab-text">Избранное</span>
+        </button>
+        <button class="tab-bar-item">
+            <i class="ph ph-shopping-cart tab-icon"></i>
+            <span class="tab-text">Корзина</span>
+            <span class="cart-badge">0</span>
+        </button>
+    </nav>
+
+    <script>
+        // Скрипты мобильного меню
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+        menuToggle.addEventListener('click', toggleMenu);
+        mobileMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+
+        // Логика вкладок (Описание / Характеристики)
+        const detTabs = document.querySelectorAll('.det-tab');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        detTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                detTabs.forEach(t => t.classList.remove('active'));
+                tabContents.forEach(c => c.classList.remove('active'));
+                
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.target).classList.add('active');
+            });
+        });
+
+        // Анимация лайка на странице товара
+        const wishBtnLarge = document.querySelector('.wishlist-btn-large');
+        if(wishBtnLarge) {
+            wishBtnLarge.addEventListener('click', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('ph-heart')) {
+                    icon.classList.remove('ph-heart');
+                    icon.classList.add('ph-heart-fill');
+                    this.style.color = 'var(--clr-accent-red)';
+                } else {
+                    icon.classList.add('ph-heart');
+                    icon.classList.remove('ph-heart-fill');
+                    this.style.color = 'var(--clr-text-white)';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
