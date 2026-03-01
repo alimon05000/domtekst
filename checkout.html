@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Оформление заказа | Дом Текстиля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="mobile-header">
+        <button class="menu-toggle" id="menuToggle">
+            <i class="ph ph-list"></i>
+        </button>
+        <a href="index.html" class="mobile-logo-link">
+            <img src="images/logo.PNG" alt="Лого" class="mobile-logo-img" onerror="this.style.display='none'">
+            <div class="mobile-logo-text neon-text">Дом Текстиля</div>
+        </a>
+        <button class="icon-btn profile-btn-trigger">
+            <i class="ph ph-user"></i>
+        </button>
+    </header>
+
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <aside class="sidebar" id="sidebar">
+        <div class="logo-container">
+            <a href="index.html" style="text-decoration: none; display: flex; align-items: center; gap: 15px;">
+                <img src="images/logo.PNG" alt="Лого" class="sidebar-logo-img" onerror="this.style.display='none'">
+                <h1 class="logo-text neon-text">Дом Текстиля</h1>
+            </a>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="index.html" class="nav-link">
+                <i class="ph ph-squares-four icon"></i>
+                <span class="link-text">Каталог</span>
+            </a>
+            <a href="#" class="nav-link">
+                <i class="ph ph-sparkle icon"></i>
+                <span class="link-text">Коллекции</span>
+            </a>
+        </nav>
+    </aside>
+
+    <main class="main-content">
+        <header class="top-header">
+            <div class="search-bar">
+                <i class="ph ph-magnifying-glass search-icon"></i>
+                <input type="text" placeholder="Поиск по товарам...">
+            </div>
+            <div class="user-actions">
+                <a href="index.html" class="icon-btn profile-desk-btn" style="text-decoration: none; display: flex; align-items: center; justify-content: center;">
+                    <i class="ph ph-house"></i>
+                </a>
+            </div>
+        </header>
+
+        <div class="breadcrumbs-detailed">
+            <a href="index.html">Главная</a> / <a href="#">Корзина</a> / <span>Оформление заказа</span>
+        </div>
+
+        <h1 class="page-title neon-text" style="margin-bottom: 40px;">Оформление заказа</h1>
+
+        <section class="checkout-container">
+            <div class="checkout-form-section">
+                
+                <div class="checkout-block">
+                    <div class="checkout-block-header">
+                        <span class="step-number">1</span>
+                        <h3>Контактные данные</h3>
+                    </div>
+                    <div class="form-grid">
+                        <div class="input-group">
+                            <i class="ph ph-user"></i>
+                            <input type="text" placeholder="Имя" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="ph ph-user"></i>
+                            <input type="text" placeholder="Фамилия" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="ph ph-phone"></i>
+                            <input type="tel" placeholder="+7 (___) ___-__-__" required>
+                        </div>
+                        <div class="input-group">
+                            <i class="ph ph-envelope-simple"></i>
+                            <input type="email" placeholder="E-mail" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-block">
+                    <div class="checkout-block-header">
+                        <span class="step-number">2</span>
+                        <h3>Способ доставки</h3>
+                    </div>
+                    
+                    <div class="selection-grid">
+                        <label class="selection-card">
+                            <input type="radio" name="delivery" value="courier" checked>
+                            <div class="selection-content">
+                                <i class="ph ph-truck"></i>
+                                <div>
+                                    <h4>Курьером до двери</h4>
+                                    <p>1-2 дня, от 300 ₽</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="selection-card">
+                            <input type="radio" name="delivery" value="pickup">
+                            <div class="selection-content">
+                                <i class="ph ph-storefront"></i>
+                                <div>
+                                    <h4>Самовывоз (СДЭК)</h4>
+                                    <p>2-4 дня, бесплатно</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="address-fields" style="margin-top: 20px;">
+                        <div class="input-group">
+                            <i class="ph ph-map-pin"></i>
+                            <input type="text" placeholder="Город" required>
+                        </div>
+                        <div class="form-grid">
+                            <div class="input-group">
+                                <input type="text" placeholder="Улица" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" placeholder="Дом / Корпус" required>
+                            </div>
+                            <div class="input-group">
+                                <input type="text" placeholder="Квартира" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-block">
+                    <div class="checkout-block-header">
+                        <span class="step-number">3</span>
+                        <h3>Способ оплаты</h3>
+                    </div>
+                    
+                    <div class="selection-grid">
+                        <label class="selection-card">
+                            <input type="radio" name="payment" value="card" checked>
+                            <div class="selection-content">
+                                <i class="ph ph-credit-card"></i>
+                                <div>
+                                    <h4>Картой онлайн</h4>
+                                    <p>Без комиссии</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="selection-card">
+                            <input type="radio" name="payment" value="sbp">
+                            <div class="selection-content">
+                                <i class="ph ph-qr-code"></i>
+                                <div>
+                                    <h4>СБП / QR-код</h4>
+                                    <p>Быстрая оплата</p>
+                                </div>
+                            </div>
+                        </label>
+                        <label class="selection-card">
+                            <input type="radio" name="payment" value="cash">
+                            <div class="selection-content">
+                                <i class="ph ph-wallet"></i>
+                                <div>
+                                    <h4>При получении</h4>
+                                    <p>Картой или наличными</p>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+
+                    <div class="input-group" style="margin-top: 20px;">
+                        <i class="ph ph-chat-text"></i>
+                        <input type="text" placeholder="Комментарий к заказу (необязательно)">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="checkout-summary-section">
+                <div class="order-summary-card">
+                    <h3 class="summary-title">Ваш заказ</h3>
+                    
+                    <div class="summary-items">
+                        <div class="summary-item">
+                            <div class="sum-item-img">Фото</div>
+                            <div class="sum-item-info">
+                                <h4>Комплект "Империал"</h4>
+                                <p>1 шт. x 12 500 ₽</p>
+                            </div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="sum-item-img">Фото</div>
+                            <div class="sum-item-info">
+                                <h4>Набор полотенец "Оникс"</h4>
+                                <p>2 шт. x 4 200 ₽</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="promo-code-box">
+                        <input type="text" placeholder="У вас есть промокод?">
+                        <button class="btn-outline">Применить</button>
+                    </div>
+
+                    <div class="summary-totals">
+                        <div class="total-row">
+                            <span>Товары (3 шт.)</span>
+                            <span>20 900 ₽</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Скидка</span>
+                            <span style="color: var(--clr-accent-red);">-0 ₽</span>
+                        </div>
+                        <div class="total-row">
+                            <span>Доставка</span>
+                            <span>Рассчитывается</span>
+                        </div>
+                        <div class="total-row final-total">
+                            <span>К оплате</span>
+                            <span class="neon-text">20 900 ₽</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-solid btn-full" style="height: 60px; font-size: 1rem;">Подтвердить заказ</button>
+                    <p class="terms-text">Нажимая кнопку, вы соглашаетесь с <a href="#">условиями обработки персональных данных</a>.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="main-footer">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3 class="neon-text-footer">Дом Текстиля</h3>
+                    <p>Эксклюзивные решения для отелей и дома.</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        // Скрипт мобильного меню
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('mobileOverlay');
+
+        function toggleMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = sidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        if(menuToggle) menuToggle.addEventListener('click', toggleMenu);
+        if(overlay) overlay.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>
