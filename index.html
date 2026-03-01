@@ -170,12 +170,12 @@
 
             <div class="product-grid">
                 
-                <div class="product-card">
+                <a href="product.html" class="product-card" style="text-decoration: none;">
                     <div class="product-image-container">
                         <div class="product-image-placeholder">Фото товара</div>
-                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
+                        <button class="wishlist-icon" onclick="event.preventDefault();"><i class="ph ph-heart"></i></button>
                         <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
+                            <button class="quick-view-btn" onclick="event.preventDefault();"><i class="ph ph-eye"></i> Просмотр</button>
                         </div>
                     </div>
                     <div class="product-info">
@@ -183,10 +183,10 @@
                         <h3 class="product-title">Комплект "Империал"</h3>
                         <div class="product-bottom">
                             <span class="product-price">12 500 ₽</span>
-                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
+                            <button class="add-to-cart-icon" onclick="event.preventDefault();"><i class="ph ph-plus"></i></button>
                         </div>
                     </div>
-                </div>
+                </a>
                 
                 <div class="product-card">
                     <div class="product-image-container">
@@ -305,7 +305,6 @@
             authModalOverlay.classList.remove('active');
         });
 
-        // Закрытие модалки по клику вне окна
         authModalOverlay.addEventListener('click', (e) => {
             if (e.target === authModalOverlay) {
                 authModalOverlay.classList.remove('active');
