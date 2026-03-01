@@ -687,3 +687,105 @@ i.ph, i.ph-fill { display: inline-flex; align-items: center; justify-content: ce
     .selection-grid { grid-template-columns: 1fr; }
     .checkout-block { padding: 20px; }
 }
+
+/* --- СТРАНИЦА ЛИЧНОГО КАБИНЕТА (PROFILE) --- */
+
+.profile-container {
+    display: grid; grid-template-columns: 280px 1fr; gap: 40px;
+    align-items: start; margin-bottom: 80px;
+}
+
+/* Левая колонка: Меню профиля */
+.profile-sidebar {
+    background: var(--clr-bg-card); border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 8px; padding: 30px 0; position: sticky; top: 100px;
+}
+
+.profile-user-info { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0 20px 30px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 20px; }
+.profile-avatar { width: 80px; height: 80px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2.5rem; color: var(--clr-text-muted); margin-bottom: 15px; }
+.profile-name h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; color: var(--clr-text-white); }
+.status-badge { display: inline-flex; align-items: center; gap: 5px; background: rgba(230,57,70,0.1); color: var(--clr-accent-red); font-size: 0.7rem; text-transform: uppercase; font-weight: 800; padding: 4px 10px; border-radius: 20px; letter-spacing: 1px; }
+
+.profile-menu { display: flex; flex-direction: column; }
+.profile-menu-btn {
+    background: transparent; border: none; color: var(--clr-text-muted);
+    padding: 15px 30px; text-align: left; font-size: 0.95rem; font-family: var(--font-main);
+    cursor: pointer; transition: var(--transition-smooth); display: flex; align-items: center; gap: 15px;
+    border-left: 3px solid transparent;
+}
+.profile-menu-btn i { font-size: 1.3rem; }
+.profile-menu-btn:hover { background: rgba(255,255,255,0.02); color: var(--clr-text-white); }
+.profile-menu-btn.active { color: var(--clr-text-white); border-left-color: var(--clr-accent-red); background: rgba(230,57,70,0.05); font-weight: 500; }
+.profile-menu-btn.logout { margin-top: 20px; color: rgba(255,255,255,0.3); }
+.profile-menu-btn.logout:hover { color: var(--clr-accent-red); }
+
+/* Правая колонка: Контент */
+.profile-content { display: flex; flex-direction: column; gap: 30px; }
+
+/* Карточка лояльности */
+.loyalty-card {
+    background: linear-gradient(135deg, #1a080a 0%, #0d0d0d 100%);
+    border: 1px solid rgba(230,57,70,0.2); border-radius: 8px; padding: 30px;
+    display: flex; justify-content: space-between; align-items: center;
+    box-shadow: 0 10px 30px rgba(230,57,70,0.05);
+}
+.loyalty-info h4 { font-size: 1.4rem; font-weight: 500; margin-bottom: 10px; }
+.loyalty-info p { color: var(--clr-text-muted); font-size: 0.85rem; max-width: 300px; line-height: 1.5; }
+.loyalty-points { display: flex; align-items: center; gap: 15px; text-align: right; }
+.loyalty-points i { font-size: 3rem; color: #ffc107; text-shadow: 0 0 15px rgba(255,193,7,0.3); }
+.points-amount { display: block; font-size: 2rem; font-weight: 800; color: var(--clr-text-white); line-height: 1; }
+.points-label { font-size: 0.8rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 1px; }
+
+/* Блоки профиля (Заказы, Данные) */
+.profile-block { background: var(--clr-bg-card); border: 1px solid rgba(255,255,255,0.05); border-radius: 8px; padding: 30px; }
+.profile-block-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; border-bottom: 1px solid rgba(255,255,255,0.05); padding-bottom: 15px; }
+.profile-block-header h3 { font-size: 1.2rem; font-weight: 500; text-transform: uppercase; letter-spacing: 1px; }
+
+/* Карточка заказа */
+.orders-list { display: flex; flex-direction: column; gap: 20px; }
+.order-card { border: 1px solid rgba(255,255,255,0.05); border-radius: 6px; padding: 20px; background: rgba(0,0,0,0.2); }
+.order-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 1px dashed rgba(255,255,255,0.05); }
+.order-number { display: flex; flex-direction: column; gap: 5px; }
+.order-number span:first-child { font-size: 1rem; font-weight: 600; color: var(--clr-text-white); }
+.order-date { font-size: 0.8rem; color: var(--clr-text-muted); }
+
+.order-body { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.order-items-preview { display: flex; gap: 10px; }
+.order-img-mini { width: 50px; height: 60px; background: #151515; border-radius: 4px; display: flex; justify-content: center; align-items: center; font-size: 0.6rem; color: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.05); }
+
+.order-total-info { text-align: right; }
+.order-sum-label { display: block; font-size: 0.8rem; color: var(--clr-text-muted); margin-bottom: 5px; }
+.order-sum-value { font-size: 1.4rem; font-weight: 800; color: var(--clr-text-white); }
+
+.order-footer { display: flex; gap: 15px; justify-content: flex-end; }
+.order-footer button { font-size: 0.8rem; padding: 10px 20px; }
+
+/* Личные данные */
+.personal-data-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.data-item { display: flex; flex-direction: column; gap: 5px; }
+.data-label { font-size: 0.75rem; color: var(--clr-text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.data-value { font-size: 1rem; color: var(--clr-text-white); font-weight: 500; }
+
+/* --- АДАПТИВНОСТЬ ПРОФИЛЯ --- */
+@media (max-width: 1024px) {
+    .loyalty-card { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .loyalty-points { align-self: flex-start; text-align: left; }
+}
+
+@media (max-width: 768px) {
+    .profile-container { grid-template-columns: 1fr; gap: 20px; margin-bottom: 40px; }
+    .profile-sidebar { position: static; padding: 20px 0; }
+    .profile-user-info { padding-bottom: 20px; margin-bottom: 10px; }
+    
+    .profile-menu { flex-direction: row; overflow-x: auto; padding-bottom: 10px; }
+    .profile-menu::-webkit-scrollbar { display: none; }
+    .profile-menu-btn { padding: 10px 20px; white-space: nowrap; border-left: none; border-bottom: 2px solid transparent; }
+    .profile-menu-btn.active { border-left: none; border-bottom-color: var(--clr-accent-red); }
+    .profile-menu-btn.logout { margin-top: 0; }
+    
+    .profile-block { padding: 20px; }
+    .order-body { flex-direction: column; align-items: flex-start; gap: 20px; }
+    .order-total-info { text-align: left; }
+    .order-footer { justify-content: flex-start; flex-wrap: wrap; }
+    .personal-data-grid { grid-template-columns: 1fr; gap: 15px; }
+}
