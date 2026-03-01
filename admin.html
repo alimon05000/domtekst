@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Панель Управления | Дом Текстиля</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <div class="admin-login-overlay" id="adminLoginOverlay">
+        <div class="admin-login-box">
+            <h2 class="neon-text">Доступ <br>запрещен</h2>
+            <p>Введите данные администратора</p>
+            <div class="input-group">
+                <i class="ph ph-user"></i>
+                <input type="text" id="adminLogin" placeholder="Логин (admin)">
+            </div>
+            <div class="input-group">
+                <i class="ph ph-lock-key"></i>
+                <input type="password" id="adminPassword" placeholder="Пароль (premium2026)">
+            </div>
+            <p id="loginError" class="error-text"></p>
+            <button class="btn-solid btn-full" onclick="checkAdminLogin()">Войти в панель</button>
+        </div>
+    </div>
+
+    <aside class="admin-sidebar">
+        <div class="logo-container">
+            <img src="images/logo.PNG" alt="Лого" class="sidebar-logo-img" onerror="this.style.display='none'">
+            <h1 class="logo-text neon-text">Дом Текстиля</h1>
+        </div>
+        <nav class="admin-nav">
+            <a href="#" class="nav-link active"><i class="ph ph-chart-line-up"></i> Главная</a>
+            <a href="#" class="nav-link"><i class="ph ph-shopping-bag"></i> Заказы <span class="badge">3</span></a>
+            <a href="#" class="nav-link"><i class="ph ph-package"></i> Товары</a>
+            <a href="#" class="nav-link"><i class="ph ph-users"></i> Клиенты</a>
+            <a href="#" class="nav-link"><i class="ph ph-percent"></i> Скидки и Баллы</a>
+            <a href="#" class="nav-link"><i class="ph ph-gear"></i> Настройки</a>
+        </nav>
+        <button class="logout-btn" onclick="location.reload()"><i class="ph ph-sign-out"></i> Выйти</button>
+    </aside>
+
+    <main class="admin-main">
+        <header class="admin-header">
+            <h2 class="page-title">Сводка за сегодня</h2>
+            <div class="admin-profile">
+                <span class="admin-name">Главный Администратор</span>
+                <div class="admin-avatar"><i class="ph ph-user-circle"></i></div>
+            </div>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ph ph-wallet"></i></div>
+                <div class="stat-info">
+                    <p>Выручка</p>
+                    <h3>124 500 ₽</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ph ph-shopping-cart"></i></div>
+                <div class="stat-info">
+                    <p>Новых заказов</p>
+                    <h3>12</h3>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon"><i class="ph ph-users"></i></div>
+                <div class="stat-info">
+                    <p>Новых клиентов</p>
+                    <h3>5</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="admin-section">
+            <div class="section-header">
+                <h3>Последние заказы</h3>
+                <button class="btn-outline btn-sm">Смотреть все</button>
+            </div>
+            <div class="table-responsive">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>№ Заказа</th>
+                            <th>Клиент</th>
+                            <th>Сумма</th>
+                            <th>Статус</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#10045</td>
+                            <td>Иван Иванов</td>
+                            <td>12 500 ₽</td>
+                            <td><span class="status-pill status-new">Новый</span></td>
+                            <td><button class="action-btn"><i class="ph ph-pencil-simple"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>#10044</td>
+                            <td>Анна Смирнова</td>
+                            <td>4 200 ₽</td>
+                            <td><span class="status-pill status-process">В сборке</span></td>
+                            <td><button class="action-btn"><i class="ph ph-pencil-simple"></i></button></td>
+                        </tr>
+                        <tr>
+                            <td>#10043</td>
+                            <td>Отель "Престиж"</td>
+                            <td>85 000 ₽</td>
+                            <td><span class="status-pill status-done">Доставлен</span></td>
+                            <td><button class="action-btn"><i class="ph ph-pencil-simple"></i></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <div class="support-widget" id="supportWidget">
+        <div class="support-header" onclick="toggleSupport()">
+            <i class="ph ph-chats-circle"></i>
+            <span>Чат с клиентами</span>
+            <span class="chat-badge">1</span>
+        </div>
+        <div class="support-body">
+            <div class="chat-message client-msg">
+                <p class="sender">Анна С.</p>
+                <p>Здравствуйте! Есть ли халаты черного цвета?</p>
+            </div>
+            <div class="chat-message admin-msg">
+                <p>Добрый день, Анна! Да, премиум линейка в черном цвете в наличии.</p>
+            </div>
+        </div>
+        <div class="support-footer">
+            <input type="text" placeholder="Ответить клиенту...">
+            <button class="send-btn"><i class="ph ph-paper-plane-right"></i></button>
+        </div>
+    </div>
+
+    <script>
+        // Простая логика входа (только для визуала)
+        function checkAdminLogin() {
+            const login = document.getElementById('adminLogin').value;
+            const pass = document.getElementById('adminPassword').value;
+            const errorText = document.getElementById('loginError');
+
+            if (login === 'admin' && pass === 'premium2026') {
+                document.getElementById('adminLoginOverlay').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('adminLoginOverlay').style.display = 'none';
+                }, 500);
+            } else {
+                errorText.innerText = 'Неверный логин или пароль!';
+            }
+        }
+
+        // Логика открытия чата техподдержки
+        function toggleSupport() {
+            document.getElementById('supportWidget').classList.toggle('open');
+        }
+    </script>
+</body>
+</html>
