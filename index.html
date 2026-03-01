@@ -44,17 +44,14 @@
     <div class="auth-modal-overlay" id="authModalOverlay">
         <div class="auth-modal">
             <button class="close-modal" id="closeAuthBtn"><i class="ph ph-x"></i></button>
-            
             <div class="auth-header">
                 <h3 class="neon-text">Дом Текстиля</h3>
                 <p>Войдите или зарегистрируйтесь</p>
             </div>
-
             <div class="auth-tabs">
                 <button class="auth-tab active">Вход</button>
                 <button class="auth-tab">Регистрация</button>
             </div>
-
             <form class="auth-form" id="loginForm">
                 <div class="input-group">
                     <i class="ph ph-envelope-simple"></i>
@@ -77,12 +74,63 @@
         </div>
     </div>
 
+    <div class="cart-overlay" id="cartOverlay"></div>
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3 class="neon-text">Ваша корзина</h3>
+            <button class="close-cart" id="closeCartBtn"><i class="ph ph-x"></i></button>
+        </div>
+        
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="cart-item-img-placeholder">Фото</div>
+                <div class="cart-item-info">
+                    <h4>Комплект "Империал"</h4>
+                    <p class="cart-item-param">Размер: Евро</p>
+                    <div class="cart-item-bottom">
+                        <div class="quantity-mini">
+                            <button class="qty-btn-mini minus">-</button>
+                            <input type="number" value="1" readonly class="qty-input-mini">
+                            <button class="qty-btn-mini plus">+</button>
+                        </div>
+                        <p class="cart-item-price">12 500 ₽</p>
+                    </div>
+                </div>
+                <button class="remove-item"><i class="ph ph-trash"></i></button>
+            </div>
+
+            <div class="cart-item">
+                <div class="cart-item-img-placeholder">Фото</div>
+                <div class="cart-item-info">
+                    <h4>Набор полотенец "Оникс"</h4>
+                    <p class="cart-item-param">Цвет: Черный</p>
+                    <div class="cart-item-bottom">
+                        <div class="quantity-mini">
+                            <button class="qty-btn-mini minus">-</button>
+                            <input type="number" value="2" readonly class="qty-input-mini">
+                            <button class="qty-btn-mini plus">+</button>
+                        </div>
+                        <p class="cart-item-price">8 400 ₽</p>
+                    </div>
+                </div>
+                <button class="remove-item"><i class="ph ph-trash"></i></button>
+            </div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Итого:</span>
+                <span class="total-price">20 900 ₽</span>
+            </div>
+            <button class="btn-solid btn-full">Оформить заказ</button>
+        </div>
+    </div>
+
     <aside class="sidebar" id="sidebar">
         <div class="logo-container">
             <img src="images/logo.PNG" alt="Лого" class="sidebar-logo-img" onerror="this.style.display='none'">
             <h1 class="logo-text neon-text">Дом Текстиля</h1>
         </div>
-        
         <nav class="sidebar-nav">
             <a href="#" class="nav-link">
                 <i class="ph ph-squares-four icon"></i>
@@ -110,9 +158,9 @@
                 <input type="text" placeholder="Поиск по товарам...">
             </div>
             <div class="user-actions">
-                <button class="icon-btn cart-desk-btn">
+                <button class="icon-btn cart-desk-btn" id="deskCartBtn">
                     <i class="ph ph-shopping-cart"></i>
-                    <span class="cart-badge-desk">0</span>
+                    <span class="cart-badge-desk">2</span>
                 </button>
                 <button class="icon-btn profile-desk-btn profile-btn-trigger">
                     <i class="ph ph-user"></i>
@@ -169,7 +217,6 @@
             </div>
 
             <div class="product-grid">
-                
                 <a href="product.html" class="product-card" style="text-decoration: none;">
                     <div class="product-image-container">
                         <div class="product-image-placeholder">Фото товара</div>
@@ -205,7 +252,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </section>
 
@@ -251,10 +297,10 @@
             <i class="ph ph-heart tab-icon"></i>
             <span class="tab-text">Избранное</span>
         </button>
-        <button class="tab-bar-item">
+        <button class="tab-bar-item" id="mobileCartBtn">
             <i class="ph ph-shopping-cart tab-icon"></i>
             <span class="tab-text">Корзина</span>
-            <span class="cart-badge">0</span>
+            <span class="cart-badge">2</span>
         </button>
     </nav>
 
@@ -310,6 +356,24 @@
                 authModalOverlay.classList.remove('active');
             }
         });
+
+        // ЛОГИКА БОКОВОЙ КОРЗИНЫ
+        const cartOverlay = document.getElementById('cartOverlay');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const deskCartBtn = document.getElementById('deskCartBtn');
+        const mobileCartBtn = document.getElementById('mobileCartBtn');
+        const closeCartBtn = document.getElementById('closeCartBtn');
+
+        function toggleCart() {
+            cartOverlay.classList.toggle('active');
+            cartSidebar.classList.toggle('active');
+            document.body.style.overflow = cartSidebar.classList.contains('active') ? 'hidden' : '';
+        }
+
+        deskCartBtn.addEventListener('click', toggleCart);
+        mobileCartBtn.addEventListener('click', toggleCart);
+        closeCartBtn.addEventListener('click', toggleCart);
+        cartOverlay.addEventListener('click', toggleCart);
 
         // Анимация лайков
         const wishBtns = document.querySelectorAll('.wishlist-icon');
