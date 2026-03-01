@@ -14,22 +14,72 @@
         <button class="menu-toggle" id="menuToggle">
             <i class="ph ph-list"></i>
         </button>
-        
         <a href="#" class="mobile-logo-link">
-            <img src="images/logo.PNG" alt="Лого" class="mobile-logo-img">
+            <img src="images/logo.PNG" alt="Лого" class="mobile-logo-img" onerror="this.style.display='none'">
             <div class="mobile-logo-text neon-text">Дом Текстиля</div>
         </a>
-
-        <button class="icon-btn">
+        <button class="icon-btn profile-btn-trigger">
             <i class="ph ph-user"></i>
         </button>
     </header>
 
     <div class="mobile-overlay" id="mobileOverlay"></div>
 
+    <div class="mobile-search-overlay" id="mobileSearchOverlay">
+        <div class="search-header">
+            <i class="ph ph-magnifying-glass search-icon-mobile"></i>
+            <input type="text" placeholder="Поиск по товарам..." id="mobileSearchInput">
+            <button class="close-search" id="closeSearchBtn"><i class="ph ph-x"></i></button>
+        </div>
+        <div class="search-suggestions">
+            <p>Часто ищут:</p>
+            <div class="tags">
+                <span>Постельное белье</span>
+                <span>Халаты</span>
+                <span>Сатин</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-modal-overlay" id="authModalOverlay">
+        <div class="auth-modal">
+            <button class="close-modal" id="closeAuthBtn"><i class="ph ph-x"></i></button>
+            
+            <div class="auth-header">
+                <h3 class="neon-text">Дом Текстиля</h3>
+                <p>Войдите или зарегистрируйтесь</p>
+            </div>
+
+            <div class="auth-tabs">
+                <button class="auth-tab active">Вход</button>
+                <button class="auth-tab">Регистрация</button>
+            </div>
+
+            <form class="auth-form" id="loginForm">
+                <div class="input-group">
+                    <i class="ph ph-envelope-simple"></i>
+                    <input type="text" placeholder="Email или Телефон" required>
+                </div>
+                <div class="input-group">
+                    <i class="ph ph-lock-key"></i>
+                    <input type="password" placeholder="Пароль" required>
+                </div>
+                <div class="form-actions">
+                    <label class="checkbox-container">
+                        <input type="checkbox">
+                        <span class="checkmark"></span>
+                        Запомнить меня
+                    </label>
+                    <a href="#" class="forgot-password">Забыли пароль?</a>
+                </div>
+                <button type="submit" class="btn-solid btn-full">Войти</button>
+            </form>
+        </div>
+    </div>
+
     <aside class="sidebar" id="sidebar">
         <div class="logo-container">
-            <img src="images/logo.PNG" alt="Лого" class="sidebar-logo-img">
+            <img src="images/logo.PNG" alt="Лого" class="sidebar-logo-img" onerror="this.style.display='none'">
             <h1 class="logo-text neon-text">Дом Текстиля</h1>
         </div>
         
@@ -64,7 +114,7 @@
                     <i class="ph ph-shopping-cart"></i>
                     <span class="cart-badge-desk">0</span>
                 </button>
-                <button class="icon-btn profile-desk-btn">
+                <button class="icon-btn profile-desk-btn profile-btn-trigger">
                     <i class="ph ph-user"></i>
                 </button>
             </div>
@@ -82,28 +132,28 @@
             <h3 class="section-title">Категории</h3>
             <div class="categories-grid">
                 <a href="#" class="cat-card">
-                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-img-placeholder">Фото</div>
                     <div class="cat-info">
                         <h4>Постельное белье</h4>
                         <i class="ph ph-arrow-right"></i>
                     </div>
                 </a>
                 <a href="#" class="cat-card">
-                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-img-placeholder">Фото</div>
                     <div class="cat-info">
                         <h4>Махровые изделия</h4>
                         <i class="ph ph-arrow-right"></i>
                     </div>
                 </a>
                 <a href="#" class="cat-card">
-                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-img-placeholder">Фото</div>
                     <div class="cat-info">
                         <h4>Одеяла и подушки</h4>
                         <i class="ph ph-arrow-right"></i>
                     </div>
                 </a>
                 <a href="#" class="cat-card">
-                    <div class="cat-img-placeholder">Фото категории</div>
+                    <div class="cat-img-placeholder">Фото</div>
                     <div class="cat-info">
                         <h4>Декор и уют</h4>
                         <i class="ph ph-arrow-right"></i>
@@ -156,42 +206,6 @@
                     </div>
                 </div>
 
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <div class="product-image-placeholder">Фото товара</div>
-                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Шелк</span>
-                        <h3 class="product-title">Наволочка "Рубин"</h3>
-                        <div class="product-bottom">
-                            <span class="product-price">2 900 ₽</span>
-                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card">
-                    <div class="product-image-container">
-                        <div class="product-image-placeholder">Фото товара</div>
-                        <button class="wishlist-icon"><i class="ph ph-heart"></i></button>
-                        <div class="product-overlay">
-                            <button class="quick-view-btn"><i class="ph ph-eye"></i> Просмотр</button>
-                        </div>
-                    </div>
-                    <div class="product-info">
-                        <span class="product-category">Велюр</span>
-                        <h3 class="product-title">Халат банный VIP</h3>
-                        <div class="product-bottom">
-                            <span class="product-price">8 100 ₽</span>
-                            <button class="add-to-cart-icon"><i class="ph ph-plus"></i></button>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
@@ -229,7 +243,7 @@
             <i class="ph ph-list tab-icon"></i>
             <span class="tab-text">Меню</span>
         </button>
-        <button class="tab-bar-item">
+        <button class="tab-bar-item" id="openMobileSearchBtn">
             <i class="ph ph-magnifying-glass tab-icon"></i>
             <span class="tab-text">Поиск</span>
         </button>
@@ -260,6 +274,43 @@
         menuToggle.addEventListener('click', toggleMenu);
         mobileMenuBtn.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
+
+        // Мобильный поиск
+        const openMobileSearchBtn = document.getElementById('openMobileSearchBtn');
+        const closeSearchBtn = document.getElementById('closeSearchBtn');
+        const mobileSearchOverlay = document.getElementById('mobileSearchOverlay');
+        const mobileSearchInput = document.getElementById('mobileSearchInput');
+
+        openMobileSearchBtn.addEventListener('click', () => {
+            mobileSearchOverlay.classList.add('active');
+            setTimeout(() => mobileSearchInput.focus(), 100);
+        });
+
+        closeSearchBtn.addEventListener('click', () => {
+            mobileSearchOverlay.classList.remove('active');
+        });
+
+        // Модальное окно авторизации
+        const authModalOverlay = document.getElementById('authModalOverlay');
+        const closeAuthBtn = document.getElementById('closeAuthBtn');
+        const profileBtnTriggers = document.querySelectorAll('.profile-btn-trigger');
+
+        profileBtnTriggers.forEach(btn => {
+            btn.addEventListener('click', () => {
+                authModalOverlay.classList.add('active');
+            });
+        });
+
+        closeAuthBtn.addEventListener('click', () => {
+            authModalOverlay.classList.remove('active');
+        });
+
+        // Закрытие модалки по клику вне окна
+        authModalOverlay.addEventListener('click', (e) => {
+            if (e.target === authModalOverlay) {
+                authModalOverlay.classList.remove('active');
+            }
+        });
 
         // Анимация лайков
         const wishBtns = document.querySelectorAll('.wishlist-icon');
